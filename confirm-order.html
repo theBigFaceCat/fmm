@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>确认下单</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="confirm-order">
+        <div class="pro-img img-box"><img src="./images/pro-img.jpg" alt="二黄排骨饭"></div>
+        <div class="order-info">
+            <div class="go-back"><a href="./product-list.html"><i></i>返回重选</a></div>
+            <div class="pro-info">
+                <h5 class="ell">二黄排骨饭</h5>
+                <p>菜品说明菜品说明菜品说明菜品说明菜品说明菜品说明菜品说明菜品说明</p>
+            </div>
+            <div class="confirm-nums">
+                <h6>选择分数</h6>
+                <div class="inputs">
+                    <a href="javascript:;" class="minus"></a>
+                    <input type="text" class="input" value="1">
+                    <a href="javascript:;" class="add"></a>
+                </div>
+            </div>
+            <div class="confirm-price">
+                <h6>订单总金额 RMB</h6>
+                <p><span>28.0</span>元</p>
+            </div>
+            <a href="javascript:;" class="confirm-btn">确认订单</a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    (function(){
+        $(function(){
+            fmm.count({
+                "addBtn": ".add",
+                "minusBtn": ".minus",
+                "input": ".input",
+                "maxNum": 5 /* 没有最大值限制,去掉这个参数 */
+            })
+        })
+    })();
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="logo img-box"><img src="./images/logo.png" alt="饭美美"></div>
+    </header>
+
+    <!-- banner -->
+    <div class="index-main swiper-container" id="banner">
+        <div class="swiper-wrapper img-box">
+            <div class="swiper-slide"><img src="./images/banner.jpg" width="100%"></div>
+            <div class="swiper-slide"><img src="./images/banner.jpg" width="100%"></div>
+            <div class="swiper-slide"><img src="./images/banner.jpg" width="100%"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- footer -->
+    <footer class="index-footer">
+        <div class="index-footer-main">
+            <div class="qrcode">
+                <ul>
+                    <li class="img-box"><img src="./images/qrcode-1.png"></li>
+                    <li class="img-box"><img src="./images/qrcode-2.png"></li>
+                </ul>
+            </div>
+            <div class="index-footer-tips">
+                <img src="./images/fmmtips.png" alt="吃饭美美哒!">
+                <a href="#" class="ell"><i class="icon icon-info"></i>订取餐流程说明</a>
+            </div>
+        </div>
+        <div class="index-eat-btn"><a href="#"><i class="icon icon-eat"></i>立刻吃饭</a></div>
+        <div class="index-order-btn"><a href="#"><i class="icon icon-takemeal"></i>APP订单取餐</a></div>
+    </footer>
+
+    <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        var mySwiper = new Swiper('#banner',{
+            autoplay: 5000,
+            visibilityFullFit : true,
+            loop: true,
+            pagination : '.swiper-pagination'
+        });
+    })
+</script>

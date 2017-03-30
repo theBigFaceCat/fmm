@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>产品列表</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="logo img-box"><img src="./images/logo.png" alt="饭美美"></div>
+    </header>
+
+    <!-- list -->
+    <div class="product-list swiper-container">
+        <div class="swiper-wrapper" id="product-list">
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    (function(){
+        $(function(){
+            $.ajax({
+                url: "./data/product-list.json",
+                type: "get",
+                dataType: "json",
+                success: function(d){
+                    if(d.status == 200){
+                        var _data = d.data,
+                            _wrap = "<div class='swiper-slide'><ul></ul></div>",
+                            _str = "";
+
+                        $("#product-list").empty();
+
+                        for(var q=0; q<_data.length; q++){
+                            _str += "<li>";
+                            _str += "   <a href='"+_data[q].url+"'>";
+                            _str += "       <div class='pro-info'>";
+                            _str += "           <h6>"+_data[q].name+"</h6>";
+                            _str += "           <p>"+_data[q].brief+"</p>";
+                            _str += "           <div class='pro-price'>仅售RMB<span>"+_data[q].price+"</span>元</div>";
+                            _str += "       </div>";
+                            _str += "       <img src='"+_data[q].picPath+"' width='850' height='326'>";
+                            _str += "   </a>";
+                            _str += "</li>";
+
+
+                            if((q+1)%4 == 0){
+                                var _box = $(_wrap);
+                                $("#product-list").append(_box);
+                                _box.children("ul").append(_str);
+                                _str = "";
+                            }else if(q == _data.length-1){
+                                var _box = $(_wrap);
+                                $("#product-list").append(_box);
+                                _box.children("ul").append(_str);
+                            }
+                        }
+
+                        var swiper = new Swiper('.product-list', {
+                            effect: 'coverflow',
+                            grabCursor: true,
+                            centeredSlides: true,
+                            slidesPerView: 'auto',
+                            coverflow: {
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows : true
+                            }
+                        });
+                    }
+                }
+            });
+
+            fmm.countdown();
+        })
+    })();
+</script>

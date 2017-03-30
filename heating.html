@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>正在拼命加热中</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="heating-wrap">
+        <div class="img-box"><img src="./images/heating.png" alt="正在拼命加热中"></div>
+        <div class="heating-main">
+            <h5>正在拼命加热中······</h5>
+            <h6>请您不要离开, 美饭马上出来! </h6>
+            <p>请注意: 出餐后30秒内如未取走,设备将认为无人认领并进行自动回收处理, 请您及时取走餐盒,小心烫手哦!</p>
+            <div class="line"><div class="cur-line" id="timeLine"></div></div>
+        </div>
+    </div>
+
+    <div class="heating-footer">
+        <a href="/">返回首页</a>
+    </div>
+
+    <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    (function(){
+        var _number = 30;
+
+        var _move = function(){
+            _number-= 1/30;
+
+            $("#timeLine").css({"width": _number*(100/30)+"%"});
+
+            if(_number <= 0){
+                window.location.href="/";
+                return false;
+            }else{
+                requestAnimationFrame(_move);
+            }
+        };
+
+        requestAnimationFrame(_move);
+    })()
+</script>

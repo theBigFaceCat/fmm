@@ -1,0 +1,201 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*index*/
+.icon-info{width: .2rem; height: .2rem; margin-right: 2px; background: url("../images/icon-info.png") no-repeat; background-size: 100%;}
+.icon-eat{width: .6rem; height: .6rem; background: url("../images/icon-eat.png") no-repeat; background-size: 100%;}
+.icon-takemeal{width: .6rem; height: .6rem; background: url("../images/icon-takemeal.png") no-repeat; background-size: 100%;}
+.header{width: 100%; height: 2.44rem; background-color: #fff; overflow: hidden;}
+.header .logo{width: 3.37rem; height: 1.47rem; float: right; margin: .46rem .52rem 0 0;}
+.index-main{position: relative; height:6.14rem; overflow: hidden;}
+.index-footer{height: 2.22rem; background-color: #404040; overflow: hidden;}
+.index-footer .index-footer-main{width: 9.75rem; height: 1.22rem; padding: .5rem 0; float: left; overflow: hidden;}
+.index-footer .index-footer-main .qrcode{height: 1.22rem; padding-left: .56rem; float: left;}
+.index-footer .index-footer-main .qrcode ul li{width: 1.22rem; height: 1.22rem; float: left; margin-right: .4rem;}
+.index-footer .index-footer-main .index-footer-tips{width:2.21rem; height: 1.22rem; float: left; text-align: center;}
+.index-footer .index-footer-main .index-footer-tips img{display: block; width: 2.21rem; height: .79rem;}
+.index-footer .index-footer-main .index-footer-tips a{display: block; height: .3rem; line-height: .3rem; margin-top: .14rem; color: #bfc0c0; font-size: .18rem;}
+.index-eat-btn, .index-order-btn{height:2.22rem; float: left; text-align: center; line-height: 2.22rem; font-size: .36rem;}
+.index-eat-btn{width:4.88rem; background-color: #4d4d4d;}
+.index-order-btn{width:4.57rem; background-color: #575757;}
+.index-eat-btn a, .index-order-btn a{display: block; width: 100%; height: 100%;}
+.index-eat-btn a{color: #00abeb;}
+.index-order-btn a{color: #c1d969;}
+.index-eat-btn i, .index-order-btn i{margin-right: .24rem;}
+
+/*product-list*/
+.product-list{position: relative; height: 6.52rem;}
+.product-list .swiper-slide{width: 17rem; height: 6.52rem; background: #fff; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;}
+.product-list .swiper-slide-active{ -webkit-box-shadow: 2px 2px 4px rgba(255, 255, 255, .8); -moz-box-shadow: 2px 2px 4px rgba(255, 255, 255, .8); box-shadow: 2px 2px 4px rgba(255, 255, 255, .8);}
+.product-list ul li{position: relative; width: 8.5rem; height: 3.26rem; float: left; overflow: hidden;}
+.product-list ul li img{display: block; width: 100%; height: auto;}
+.product-list ul li .pro-info{position: absolute; top: 0; left: 0; width: 3.14rem; height: 3.26rem; padding: .15rem .3rem; color: #fff; background-color: rgba(35, 24, 21, .7); box-sizing: border-box; overflow: hidden;}
+.product-list ul li .pro-info h6, .product-list ul li .pro-info p{overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap; transform: translate(3.14rem, 0); transition: all .3s;}
+.product-list .swiper-slide-active .pro-info h6{animation: moveInfo .4s .2s forwards;}
+.product-list .swiper-slide-active .pro-info p{animation: moveInfo .4s .4s forwards;}
+.product-list ul li .pro-info h6{height: .5rem; line-height: .5rem; margin-top: 1.45rem; font-size: .4rem;}
+.product-list ul li .pro-info p{height: .3rem; line-height: .3rem; font-size: .2rem;}
+.product-list ul li .pro-info .pro-price{height: .5rem; margin-top: .1rem; line-height: .5rem; font-size: .2rem; text-indent: .2rem; background-color: #372d2a; border-radius: .2rem; border: 2px solid #fff; overflow: hidden; opacity: 0;}
+.product-list .swiper-slide-active .pro-info .pro-price{animation: showPrice .3s .8s forwards;}
+.product-list ul li .pro-info .pro-price span{display: inline-block; padding: 0 .1rem; line-height: .5rem; vertical-align: middle; text-indent: 0; font-size: .4rem;}
+
+/*confirm order*/
+.confirm-order{width: 19.2rem; height: 10.8rem; overflow: hidden;}
+.confirm-order .pro-img{width: 14rem; height: 10.8rem; float: left; overflow:hidden;}
+.confirm-order .pro-img img{animation: imageAnimation 20s infinite;}
+.confirm-order .order-info{position: relative; height: 100%; margin-left: 14rem; padding: 1.4rem 1.1rem 1.8rem .7rem; overflow: hidden; box-sizing: border-box;}
+.confirm-order .order-info .go-back, .header .go-back{position: absolute; top: .46rem; right: .3rem; height: .32rem; line-height: .32rem;}
+.header .go-back{top: .6rem; right: .7rem;}
+.confirm-order .order-info .go-back a, .header .go-back a{display: block; color: #231815; font-size: .18rem;}
+.confirm-order .order-info .go-back a i, .header .go-back a i{display: inline-block; width: .32rem; height: .32rem; margin-right: .1rem; vertical-align: middle; background: url("../images/go-back.png") no-repeat; background-size: 100%;}
+.confirm-order .order-info h5{height: .8rem; line-height: .8rem; font-size: .44rem; color: #231815;}
+.confirm-order .order-info h6{height: .4rem; line-height: .4rem; font-size: .28rem; color: #999;}
+.confirm-order .order-info .pro-info p{height: 1.8rem; line-height: .3rem; color: #999; font-size: .2rem; overflow: hidden;}
+.confirm-order .order-info .confirm-nums{margin-top: .65rem;}
+.confirm-order .order-info .confirm-nums .inputs{width: 2.48rem; height: .74rem; margin-top: .4rem;}
+.confirm-order .order-info .confirm-nums .inputs a{display: block; float: left; width: .74rem; height: .74rem; background-color: #b0b1b1; background-repeat: no-repeat; background-position: center; background-size: .24rem;}
+.confirm-order .order-info .confirm-nums .inputs a.add{background-image: url("../images/plus-on.png");}
+.confirm-order .order-info .confirm-nums .inputs a.minus{background-image: url("../images/minus.png");}
+.confirm-order .order-info .confirm-nums .inputs a:active{background-color: #777; transition: all .3s;}
+.confirm-order .order-info .confirm-nums .inputs a.minus:active{background-image: url("../images/minus-on.png");}
+.confirm-order .order-info .confirm-nums .inputs input{display: block; float: left; width: 1rem; height: .74rem; border: 0; background-color: transparent; font-size: .5rem; color: #231815; text-align: center;}
+.confirm-order .order-info .confirm-price{margin-top: .75rem;}
+.confirm-order .order-info .confirm-price p{height: .7rem; margin-top: .3rem; font-size: .28rem;line-height: .7rem; color: #999;}
+.confirm-order .order-info .confirm-price p span{font-size: .68rem; color: #231815; margin-right: .15rem;}
+.confirm-order .order-info .confirm-btn{position: absolute; bottom: 0; right: 0; display: block; width: 100%; height: 1.8rem; text-align: center; line-height: 1.8rem; color: #fff; font-size: .42rem; background-color: #eb6100;}
+
+/*取餐*/
+.confirm-order .take-order-info{padding: 2.7rem .6rem; text-align: center;}
+.confirm-order .take-order-info h6{height: .66rem; line-height: .66rem; font-size: .32rem; color: #999;}
+.confirm-order .take-order-info h6 span{padding-left: 5px; color: #0d6fb8;}
+.confirm-order .take-order-info h5{height: .8rem; line-height: .8rem; font-size: .5rem; color: #231815;}
+.confirm-order .take-order-info p{height: .6rem; margin-top: .2rem; font-size: .3rem; line-height: .6rem;}
+.confirm-order .take-order-info p strong{padding: 0 5px; font-size: .5rem; color: #eb6100;}
+.confirm-order .take-btn{position: absolute; right: 0; bottom: 0; display: block; width: 100%; height: 1.68rem; color: #fff; font-size: .32rem; line-height: 1.68rem; text-align: center;}
+.confirm-order .take-btn.take-hot{background-color: #ea5413; bottom: 1.68rem;}
+.confirm-order .take-btn.take-cold{background-color: #00abeb;}
+
+/*等待取餐*/
+.confirm-order .take-waitting{padding: 4rem .4rem 2rem .7rem;}
+.waitting-order{height: .7rem; line-height: .7rem; color: #999; font-size: .26rem;}
+.waitting-order span{padding-left: .3rem; font-size: .36rem;}
+.waitting-main{margin-top: .1rem; overflow: hidden;}
+.waitting-main p{height: .6rem; margin-top: .14rem; line-height: .6rem; font-size: .46rem; color: #231815;}
+.waitting-main p span{padding: 0 5px; color: #ed4451;}
+.take-waitting p.tips{height: .6rem; line-height: .6rem; margin-top: .1rem; font-size: .32rem; color: #e60012;}
+
+/*取余下的餐*/
+.confirm-order .take-others{padding-top: 2rem;}
+.confirm-order .take-others .take-btn.take-hot{bottom: 3.36rem;}
+.confirm-order .take-others .take-btn.take-cold{bottom: 1.68rem;}
+.confirm-order .take-btn.take-later{background-color: #c1d969;}
+
+/*扫码*/
+.scan-header{height: 1.65rem; background-color: #eee; font-size: .3rem; line-height: 1.65rem; text-align: center; color: #898989;}
+.scan-main{width: 14rem; height: 5.94rem; padding: .8rem 0 .6rem; margin: 0 auto; overflow: hidden;}
+.scan-main h6{height: .36rem; line-height: .36rem; font-size: .3rem; color: #231815;}
+.scan-main .scan-illustration{width: 7rem; float: left; overflow: hidden;}
+.illustration-step{padding-top: 1.26rem;}
+.illustration-step ul li{width: 3rem; height: 3.8rem; float: left; margin-right: .3rem;}
+.illustration-step ul li .step-img{position: relative; width: 2.04rem; height: 2.2rem; margin: .3rem auto 0;}
+.illustration-step ul li .step-img.step-1{background: url("../images/phone-code.jpg") no-repeat center; background-size: 1.04rem 2.2rem;}
+.illustration-step ul li .step-img.step-2 .scan-code{position: absolute; top: .4rem; right: 0; width: 1.2rem; height: .4rem; background: url("../images/scancode.png") no-repeat; background-size: 100%;}
+.illustration-step ul li .step-img.step-2 .pointer{width:1.94rem; height: 2.2rem; background: url("../images/pionter.png") no-repeat left bottom; background-size: 100%; animation: pointerMove 6s infinite;}
+.illustration-step ul li p{height: .36rem; margin-top: .94rem; line-height: .36rem; font-size: .18rem; color: #999;}
+.check-code{float: right; margin-right: 1.08rem;}
+.check-code .input{height: .5rem; line-height: .5rem; margin-top: .36rem; font-size: .38rem; color: #595656; border: none; background-color: transparent;}
+.check-code .btns{width: 4.74rem; margin-top: .2rem; border: 1px solid #d9d9da; overflow: hidden; box-sizing: border-box;}
+.check-code .btns a{display: block; width: 1.58rem; height: .86rem; float: left; margin: -1px 0 0 -1px; background-color: #eeefef; color: #595656; font-size: .3rem; text-align: center; line-height: .86rem; border-left: 1px solid #d1d1d2; border-top: 1px solid #d1d1d2; box-sizing: border-box;}
+.check-code .btns a span{display: inline-block; transform: scale(.8);}
+.check-code .take-meal-btn{display: block; width: 4.7rem; height: .86rem; margin-top: .1rem; text-align: center; line-height: .86rem; background-color: #655e5c; color: #fff; font-size: .24rem;}
+.timer-wrap{height: 1.82rem; padding: 0 1.3rem 0 2.44rem;}
+.timer-wrap .timer-main{width:13.82rem; float: right;}
+.timer-wrap .timer-main .timer-line{width:11.9rem;}
+.timer-wrap .scan-tips{width:1rem; height: 1rem; float: left; margin-top: .3rem; background: url("../images/scan-tips.png") no-repeat; background-size: 100%;}
+
+/*check code result*/
+.check-code-result{height: 6.52rem; padding-top: 2.44rem; display: flex; justify-content: center; text-align: center; align-items: center;}
+.check-code-result dl{width: 100%;}
+.check-code-result dt{height: .6rem; line-height: .6rem; font-size: .54rem; color: #231815;}
+.check-code-result dd{height: .34rem; margin-top: .5rem; line-height: .34rem; font-size: .28rem; color: #999;}
+
+.update-icon{width: 1.72rem; height: 1.54rem; margin: 1.4rem auto .2rem;}
+.malfunction h5{height: 1.02rem; margin: 1.16rem auto 0; line-height: 1.02rem; font-size: .6rem; color: #231815;}
+.malfunction h5 i{display: inline-block; width:1.02rem; height: 1.02rem; vertical-align: middle; margin: -4px .24rem 0; background: url("../images/close-icon.png") no-repeat; background-size: 100%;}
+.malfunction h6{height: .6rem; margin: .72rem auto .8rem; line-height: .6rem; font-size: .34rem; color: #dd4012; font-weight: 600;}
+.malfunction p{height: .5rem; margin: .5rem auto; line-height: .5rem; color: #999; font-size: .3rem;}
+.malfunction p span{font-size: .26rem;}
+
+.heating-wrap{width: 15.2rem; height: 5.52rem; padding: 3.74rem 2rem 0 2rem; color: #231815; overflow: hidden;}
+.heating-wrap .img-box{width:4.24rem; height: 4.08rem; float: left;}
+.heating-main{width:9.6rem; margin-left: 5.2rem;}
+.heating-main h5, .heating-main h6, .heating-main p{overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap;}
+.heating-main h5{height: .7rem; margin-top: .92rem; line-height: .7rem; font-size: .48rem;}
+.heating-main h6{height: .74rem; line-height: .64rem; font-size: .38rem;}
+.heating-main p{height: .36rem; line-height: .36rem; color: #e92232;}
+.heating-main .line{position: relative; width: 100%; height: .05rem; margin-top: .26rem; background-color: #ddd;}
+.heating-main .cur-line{height: 100%; background-color: #00abeb;}
+.heating-footer{height: 1.84rem; padding: 0 1.1rem;}
+.heating-footer a{display: block; width: 1.92rem; height: .56rem; float: right; margin-top: .6rem; line-height: .56rem; text-align: center; font-size: .34rem; color: #b5b6b6; border: 1px solid #ddd; -webkit-border-radius: .2rem; -moz-border-radius: .2rem; border-radius: .2rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+.take-tips{width: 12.5rem; height: 5.1rem; padding-top: 3.87rem; margin: 0 auto; overflow: hidden;}
+.take-tips .img-box{width:2.54rem; height: 2.54rem; float: left;}
+.take-tips-main{margin-left: 3.1rem;}
+.take-tips-main h5{height: .8rem; margin-top: .54rem; line-height: .8rem; font-size: .54rem;}
+.take-tips-main h6{height: .68rem; line-height: .68rem; font-size: .44rem;}
+
+.pay-main{height: 6.52rem;}
+.pay-info{width: 11rem; margin: 0 auto; padding-top: .98rem;}
+.pay-info-main{width: 7.2rem; float: left;}
+.pay-info-main .img-box{width: 1.42rem; height: 1.42rem; margin-bottom: .72rem;}
+.pay-info-main p{height: .8rem; margin-top: .25rem; line-height: .8rem; color: #898989; font-size: .32rem;}
+.pay-info-main p span{padding-left: .25rem; font-size: .4rem; color: #231815;}
+.pay-info-main p strong{padding: 0 .25rem; font-size: .6rem; color: #e60012;}
+.qrcode-main{padding-top: .36rem; float: left;}
+.qrcode-main h6{height: .5rem; line-height: .5rem; color: #9d9d9d; font-size: .22rem;}
+.qrcode-main h6 i{display: inline-block; float: left; width: .5rem; height: .5rem; margin-right: .24rem; background: url("../images/icon-scanning.png") no-repeat; background-size: 100%;}
+.qrcode-main .qr-img{width: 2rem; height: 2rem; margin: .4rem 0 0 .36rem;}
+.pay-page{width: 11.7rem; height: 6.52rem; margin: 0 auto;}
+.order-info{height: 1.8rem; padding-top: .94rem;}
+.order-info.active{padding-top: 0; padding-bottom: .4rem; border-bottom: 3px solid #b5b6b6; transition: all .3s;}
+.order-info h6{height: .6rem; line-height: .6rem; font-size: .32rem; color: #9d9d9d;}
+.order-info p{height: .8rem; margin-top: .4rem; font-size: .52rem; line-height: .8rem; color: #231815;}
+.order-info p span{padding-left: .7rem;}
+.order-info p span.money{font-size: .3rem;}
+.order-info p strong{padding: 0 .1rem; font-size: .8rem; color: #e60012;}
+.choose-pay-method{padding-top: .9rem;}
+.choose-pay-method dl dt, .choose-pay-method dl dd{float: left;}
+.choose-pay-method dl dt{width: 3.1rem; height: 1.16rem; line-height: 1.16rem; font-size: .32rem; color: #9d9d9d;}
+.choose-pay-method dl dd a{display:block; width: 1.16rem; height: 1.6rem; margin: 0 .24rem; float: left;}
+.choose-pay-method dl dd a i{display: block; width: 1.16rem; height: 1.16rem; background-repeat: no-repeat; background-size: 100%;}
+.choose-pay-method dl dd a i.icon-zfb{background-image: url("../images/pay-zfb.png");}
+.choose-pay-method dl dd a i.icon-wx{background-image: url("../images/pay-wx.png");}
+.choose-pay-method dl dd a i.icon-ykt{background-image: url("../images/pay-szjt.png");}
+.choose-pay-method dl dd a i.icon-apppay{background-image: url("../images/pay-iospay.png");}
+.choose-pay-method dl dd a span{display: block; height: .38rem; line-height: .38rem; color: #23211d; font-size: .18rem; text-align: center; white-space: nowrap;}
+.change-pay-method h6{height: .8rem; line-height: .8rem; font-size: .28rem; color: #9d9d9d;}
+.change-pay-method h6 span{padding-left: .5rem;}
+.cur-pay-method, .other-pat-method{width: 5.5rem; float: left;}
+.cur-wrap{}
+.other-pat-method .others-list{}
+
+@-webkit-keyframes moveInfo {
+    0% {transform: translate(3.14rem,0);}
+    100% {transform: translate(0,0);}
+}
+@-webkit-keyframes showPrice {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+@-webkit-keyframes imageAnimation {
+    0% {-webkit-transform: scale(1.1);}
+    50% {-webkit-transform: scale(1);}
+    100% {-webkit-transform: scale(1.1);}
+}
+@keyframes pointerMove {
+    0%, 50%, 100%{transform: translate(0,0);}
+    10%{transform: translate(-.4rem,0);}
+    20%{transform: translate(.4rem,0);}
+    30%{transform: translate(-.4rem,.3rem);}
+    40%{transform: translate(.4rem,.3rem);}
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>扫码取餐</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="scan-header">中午好, 营养美饭已经准备就绪, 敬请您享用!</div>
+    <div class="scan-main">
+        <div class="scan-illustration">
+            <h6>扫码取餐</h6>
+            <div class="illustration-step">
+                <ul class="clearfix">
+                    <li>
+                        <div class="step-img step-1"></div>
+                        <p>1.打开手机APP并调出订单二维码;</p>
+                    </li>
+                    <li>
+                        <div class="step-img step-2">
+                            <div class="scan-code"></div>
+                            <div class="pointer"></div>
+                        </div>
+                        <p>2.在屏幕下方的扫码器处扫码确认取餐。</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="check-code">
+            <h6>取餐码取餐</h6>
+            <input type="text" class="input" id="input" value="" readonly maxlength="8">
+            <div class="btns" id="calculator">
+                <a href="javascript:;" data-num="1">1</a>
+                <a href="javascript:;" data-num="2">2</a>
+                <a href="javascript:;" data-num="3">3</a>
+                <a href="javascript:;" data-num="4">4</a>
+                <a href="javascript:;" data-num="5">5</a>
+                <a href="javascript:;" data-num="6">6</a>
+                <a href="javascript:;" data-num="7">7</a>
+                <a href="javascript:;" data-num="8">8</a>
+                <a href="javascript:;" data-num="9">9</a>
+                <a href="javascript:;" data-type="clear"><span>清除</span></a>
+                <a href="javascript:;" data-num="0">0</a>
+                <a href="javascript:;" data-type="delete"><span>退格</span></a>
+            </div>
+            <a href="javascript:;" class="take-meal-btn">确定取餐</a>
+        </div>
+    </div>
+
+    <div class="timer-wrap">
+        <div class="scan-tips"></div>
+        <div class="timer-main">
+            <div class="timer-line">
+                <div class="line-time" id="timeNum">60''</div>
+                <div class="line-wrap"><div class="cur-line" id="timeLine"></div></div>
+            </div>
+            <a href="/">返回首页</a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    (function(){
+        $(function(){
+            var _max = parseInt($("#input").attr("maxlength")),
+                _str = new RegExp("[0-9]{"+_max+"}");
+
+            $("#calculator a[data-num]").click(function(){
+                var _num = $(this).data("num"),
+                    _val = $("#input").val();
+
+                if(!_str.test(_val)){
+                    $("#input").val(_val + _num);
+                }
+            });
+
+            $("#calculator a[data-type='delete']").click(function(){
+                var _val = $("#input").val();
+
+                $("#input").val(_val.substring(0, $("#input").val().length - 1));
+            });
+
+            $("#calculator a[data-type='clear']").click(function(){
+                $("#input").val("");
+            });
+
+            var _number = 60;
+            var _move = function(){
+                _number-= 1/60;
+
+                $("#timeNum").text(Math.ceil(_number)+"''");
+                $("#timeLine").css({"width": _number*(100/60)+"%"});
+
+                if(_number <= 0){
+                    window.location.href="/";
+                    return false;
+                }else{
+                    requestAnimationFrame(_move);
+                }
+            };
+
+            requestAnimationFrame(_move);
+        })
+    })()
+</script>
